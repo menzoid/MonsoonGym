@@ -1,0 +1,8 @@
+<h4>trainers page</h4>
+
+<%= link_to "+Add", new_trainer_path %>
+
+<% @trainers.each do |trainer| %>
+  <%= trainer.first_name %>
+  <p class="p-2"><%= link_to "See Trainer", trainer_path(trainer) %></p>
+<% end %>

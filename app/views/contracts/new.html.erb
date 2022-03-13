@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for [ @member, @contract] do |f| %>
+  <%= f.association :package %>
+  <%= f.button :submit, wrapper_html: { class: 'btn btn-primary' }%>
+  <% end %>
+</div>
+
+<%= link_to "Back to class", member_path(@member) %>

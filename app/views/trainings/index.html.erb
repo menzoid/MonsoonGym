@@ -1,0 +1,11 @@
+<h4>Classes</h4>
+
+<%= link_to "+Add", new_training_path %>
+
+<% @trainings.each do |training| %>
+  <%= training.discipline.style %>
+  <%= training.trainer.first_name %>
+  <%= training.start_time.strftime("%d %b %y") %>
+  <%= training.start_time.strftime("%H:%M") %>
+  <p class="p-2"><%= link_to "View Class", training_path(training) %></p>
+<% end %>

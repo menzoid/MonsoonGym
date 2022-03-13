@@ -1,0 +1,11 @@
+<h4>Members page</h4>
+
+<%= link_to "+Add", new_member_path %>
+
+<% @members.each do |member| %>
+  <h3><%= member.first_name %></h3>
+  <p><%= member.email %></p>
+  <p class="p-2"><%= link_to "See Member", member_path(member) %></p>
+<% end %>
+
+<h4>After all members</h4>

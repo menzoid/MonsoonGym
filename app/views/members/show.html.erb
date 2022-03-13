@@ -1,0 +1,15 @@
+<h3>Member show page</h3>
+
+<%= @member.first_name %>
+<%= @member.last_name %>
+<%= @member.email %>
+<%= @member.sessions.count %>
+
+<h4>Current Contract</h4>
+<% @member.contracts.each do |contract| %>
+  <%= contract.package.name %>
+  <%= contract.package.units %>
+  <p>Sessions remaining:</p><%= contract.package.units - @member.sessions.count %>
+<% end %>
+
+<%= link_to "+Add Contract", new_member_contract_path(@member) %>
